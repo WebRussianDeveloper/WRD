@@ -1,6 +1,6 @@
 function addAtribToLogin(id1, id2, id3) {
     document.getElementById(id1).setAttribute('selected', 'selected');
-    document.getElementById(id2).removetAttribute('selected');
+    document.getElementById(id2).removeAttribute('selected');
     document.getElementById(id3).removeAttribute('selected');
 }
 jQuery(function($) {
