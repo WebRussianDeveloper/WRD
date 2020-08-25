@@ -1,5 +1,15 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])) {
+ 
+  // Build POST request
+  $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+  $recaptcha_secret = '6LdAOMMZAAAAAOx3nm-0_OWzqpgMN4qimRvWLk5p';
+  $recaptcha_response = $_POST['recaptcha_response'];
 
+  // Make and decode POST request
+  $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
+  $recaptcha = json_decode($recaptcha);
+  if ($recaptcha->score >= 0.5) {
 $project_name = "WrdSite";
 $admin_email = "order@wrd.ru";
 $subject = "Новый заказ";
@@ -14,16 +24,14 @@ $list2 = $_POST['list2'];
   $arr = array(
     'Имя: ' => $name,
     'Email: ' => $email,
-    'Пакет: ' => $list1,
-    'Тип сайта: ' => $list2,
+    'Тип сайта: ' => $list1,
     'Сообщение: ' => $message,
   );
   
   $arr2 = array(
     'Имя: ' => $name,
     'Email: ' => $email,
-    'Пакет: ' => $list1,
-    'Тип сайта: ' => $list2,
+    'Тип сайта: ' => $list1,
     'Сообщение: ' => $message,
   );
   
@@ -43,3 +51,8 @@ $chat_id = "-432118680";
   
   mail($admin_email, $subject, $txt2, $headers);
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
+  }
+  else {
+    echo "ХУЙ";
+  }
+}

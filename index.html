@@ -22,6 +22,8 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdAOMMZAAAAABRtXZeyv_dVx8HSvll52o-9tnCZ"></script>
+    <script src="js/captcha.js"></script>
 </head>
 <!--/head-->
 
@@ -918,6 +920,9 @@
                                     <input type="checkbox" name="acceptance" value="1" aria-invalid="false" required="required">
                                     Я принимаю <a href="privacy-policy.html" target="_blank">соглашение сайта</a> об обработке персональных данных.
                                 </div>
+                                <div>
+                                    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+                                </div>
                                 <div id="blago" class="form-group">
                                     <button type="submit" class="btn-submit">Отправить</button>
                                 </div>
@@ -973,7 +978,6 @@
     <script type="text/javascript" src="js/jquery.countTo.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-
 </body>
 
 </html>
