@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -916,21 +917,23 @@
                                 <div class="form-group">
                                     <textarea name="message" id="message" class="form-control" rows="4" placeholder="Напишите сообщение" required="required"></textarea>
                                 </div>
-                                <!-- <div>
-                                This site is protected by reCAPTCHA and the Google
-                                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-                                <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-                                </div> -->
+                           
                                 <div>
                                     <input type="checkbox" name="acceptance" value="1" aria-invalid="false" required="required">
                                     Я принимаю <a href="privacy-policy.html" target="_blank">соглашение сайта</a> об обработке персональных данных.
                                 </div>
+                           
                                 <div>
                                     <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                                 </div>
                                 <div id="blago" class="form-group">
                                     <button type="submit" class="btn-submit">Отправить</button>
                                 </div>
+                                <div class="captcha">
+                                    This site is protected by reCAPTCHA and the Google
+                                    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                                    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+                                    </div>
                             </form>
                         </div>
                         <div class="col-sm-6">

@@ -924,6 +924,12 @@ ul.address {
   color: #fff;
 }
 
+.captcha{
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.6;
+}
+
 .btn-submit {
   display: block;
   padding: 12px;
